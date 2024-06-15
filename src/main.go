@@ -29,7 +29,6 @@ func main() {
 	router.POST("/albums", postAlbums)
 
 	router.Run("localhost:8080")
-
 }
 
 // getAlbums responds with the list of all albums as JSON.
@@ -47,7 +46,6 @@ func postAlbums(c *gin.Context) {
 	if err != nil {
 		return
 	}
-
 	// Add the new album to the slice.
 	albums = append(albums, newAlbum)
 	c.IndentedJSON(http.StatusCreated, newAlbum)
